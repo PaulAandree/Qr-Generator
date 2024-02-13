@@ -4,7 +4,7 @@ from qrcode.image.styledpil import StyledPilImage
 from qrcode.image.styles.moduledrawers.pil import RoundedModuleDrawer
 from qrcode.image.styles.colormasks import RadialGradiantColorMask
 from io import BytesIO
-from PIL import Image 
+
 
 import time
 
