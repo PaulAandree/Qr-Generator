@@ -17,7 +17,7 @@ st.set_page_config(
     layout="centered",
 )
 
-st.title("QR Code Generator")
+st.title("GENERADOR DE QR")
 
 _,w,_ = st.columns(3)
 
