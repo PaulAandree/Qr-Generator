@@ -93,7 +93,7 @@ def GenerateWifiCode(red_name, red_type, passw):
 
 # Function to generate QR code based on the selected data type
 def generate_qr_code(data):
-    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+    qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_L)
     qr.add_data(data)
     qr_type = st.selectbox("Seleccione tipo de QR", ["Normal", "Imagen embebida"])
     if qr_type == "Normal":
