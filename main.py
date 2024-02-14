@@ -97,9 +97,13 @@ def generate_qr_code(data):
     qr.add_data(data)
     qr_type = st.selectbox("Seleccione tipo de QR", ["Normal", "Imagen embebida"])
     if qr_type == "Normal":
-        img = qr.make_image(image_factory=StyledPilImage, module_drawer=RoundedModuleDrawer(), eye_drawer=RoundedModuleDrawer())
+        img = qr.make_image(image_factory=StyledPilImage, 
+                            module_drawer=RoundedModuleDrawer(), 
+                            eye_drawer=RoundedModuleDrawer())
     elif qr_type == "Imagen embebida":
-        img = qr.make_image(image_factory=StyledPilImage, eye_drawer=RoundedModuleDrawer(), embeded_image_path=image_path)
+        img = qr.make_image(image_factory=StyledPilImage, 
+                            eye_drawer=RoundedModuleDrawer(), 
+                            embeded_image_path=image_path)
     img_bytes = BytesIO()
     img.save(img_bytes, format='PNG')
     return img_bytes.getvalue()
@@ -177,6 +181,12 @@ _, c2, _ = st.columns(3)
 with c2:
     if st.button("Generar Código QR"):
         if data:
+            download_button = st.download_button(
+                label="Descargar Imagen",
+                data=data,
+                file_name="qr_code.png",
+                key="download_button",
+            )
             st.image(data)
 
 
